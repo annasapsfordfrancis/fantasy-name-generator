@@ -1,5 +1,5 @@
-# Fantasy Name Generator
-#### Video Demo:  <URL HERE>
+# Fantasy Name Generator: A CS50 Final Project
+#### Video Demo:  Coming soon!
 #### Description:
 A web app that generates fantasy names based on real-world cultures using Markov chains.
 
@@ -19,6 +19,8 @@ Controls the Markov chain order. 2 creates more chaotic results. 4 creates more 
 The number of names generated.
 
 ### Installation
+
+To build you'll need npm and [poetry](https://github.com/python-poetry/poetry).
 
 Clone or download the repository.
 
@@ -50,7 +52,7 @@ I run a weekly D&D game and I often struggle to find good sources of names for c
 ### Markov Chains
 I was inspired to learn more about Markov chains when I came across Sam Twidale's [Markov Namegen project](https://www.samcodes.co.uk/project/markov-namegen/).
 
-You can find a nice explanation of the way Markov chains work here.
+If you want to find out more about Markov chains check out [Daniel Schiffman's video](https://www.youtube.com/watch?v=eGFJ8vugIWA) for a super-accessible introduction!
 
 The names that Markov chains generate can be very realistic, they can also be quite funny. I decided that the occasional silly name was all part of the experience!
 
@@ -75,17 +77,15 @@ I'm using Flask and Python to run things server-side and HTML and TailwindCss in
 #### static > data
 This contains the name lists that namemaker uses to generate the Markov chains. Lists are separated by culture and gender.
 
-- Anglo-Saxon
-- Arabic
-- German
-- Greek Myth
-- Norse
-- Slavic
-- Turkish
-- Victorian
-- Welsh
-
-Sources ->
+- [Anglo-Saxon](https://s-gabriel.org/names/engoldenglish.shtml)
+- [Arabic](https://en.wikipedia.org/wiki/List_of_Arabic_given_names)
+- [German](https://s-gabriel.org/names/german.shtml)
+- [Greek Myth](https://en.wikipedia.org/wiki/List_of_Greek_mythological_figures)
+- [Norse](https://www.ellipsis.cx/~liana/names/norse/landnamabok.html)
+- [Slavic](https://heraldry.sca.org/names/paul/)
+- [Turkish](https://en.wikipedia.org/wiki/Category:Turkish_given_names)
+- Victorian (from the 1841 census for England and Scotland)
+- [Welsh](http://www.namenerds.com/welsh/lists.html)
 
 #### templates
 
