@@ -7,4 +7,3 @@ static/dist/main.js
 static/dist/main.css
 .DS_Store
 package-lock.json
-poetry.lock
