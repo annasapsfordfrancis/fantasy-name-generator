@@ -1,0 +1,10 @@
+
+node_modules/
+static/.DS_Store
+static/dist/.DS_Store
+static/src/htmx.min.js
+static/dist/main.js
+static/dist/main.css
+.DS_Store
+package-lock.json
+poetry.lock

@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "fantasy_name_generator"
+version = "0.1.0"
+description = "A web app that generates fantasy names based on real-world cultures using Markov chains."
+authors = ["Anna Sapsford-Francis"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^2.0.1"
+Flask-Assets = "^2.0"
+namemaker = "^1.1.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

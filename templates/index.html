@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<header>
+    <h1 class="p-6 text-center tracking-wide text-white text-4xl font-bold bg-violetb-dark">Fantasy Name Generator</h1>
+</header>
+<main class="text-lg font-semibold p-4 flex flex-col items-center">
+    <p class="text-center font-medium pb-4 max-w-lg">Generate a fantasy name using Markov chains. Choose a name list to get started. <a class="text-violetb-medium" href="#">Read the documentation to learn more.</a></p>
+
+    <!-- form begins -->
+    <form hx-post="/generate"
+            hx-target="#results"
+            hx-swap="outerHTML settle:0.5s"
+            class="flex flex-col">
+
+        <!-- Choose a name type -->
+        <select name="name_type" id="name_type" aria-label="Choose a name list" required class="mb-4 mx-2 rounded-md">
+            <option value="" selected>Choose a name list</option>
+            <option value="anglosaxon">Anglo-Saxon</option>
+            <option value="arabic">Arabic</option>
+            <option value="german">Germanic</option>
+            <option value="greekmyth">Greek Myth</option>
+            <option value="norse">Norse</option>
+            <option value="slavic">Slavic</option>
+            <option value="turkish">Turkish</option>
+            <option value="victorian">Victorian</option>
+            <option value="welsh">Welsh</option>
+        </select>
+
+        <!-- Choose gender -->
+        <div class="pb-3 flex flex-row justify-evenly">
+            <div class="flex items-center">
+                <label class="pr-2" for="male">male</label>
+                <input class="focus:border-transparent focus:bg-gray-200 text-violetb-dark focus:ring-1 focus:ring-offset-2 focus:ring-gray-500" type="radio" id="male" name="gender" value="male">
+            </div>
+            <div class="flex items-center">
+                <label class="pr-2" for="female">female</label>
+                <input class="focus:border-transparent focus:bg-gray-200 text-violetb-dark focus:ring-1 focus:ring-offset-2 focus:ring-gray-500" type="radio" id="female" name="gender" value="female">
+            </div>
+            <div class="flex items-center">
+                <label class="pr-2" for="both">both</label>
+                <input class="focus:border-transparent focus:bg-gray-200 text-violetb-dark focus:ring-1 focus:ring-offset-2 focus:ring-gray-500" type="radio" id="both" name="gender" value="both" checked>
+            </div>
+        </div>
+
+        <!-- Advanced settings -->
+        <div class="px-4 py-2 mb-6 mx-4 flex flex-row justify-evenly border-2 border-gray-500 border-opacity-40 rounded-md">
+
+            <!-- Choose length -->
+            <div class="flex flex-col items-center">
+                <label class="pb-1" for="length">length</label>
+                <select name="length" id="length" required class="mb-4 rounded-md">
+                    <option value="MIN">Min</option>
+                    <option value="AVG" selected>Avg</option>
+                    <option value="MAX">Max</option>
+                </select>
+            </div>
+
+            <!-- Choose order -->
+            <div class="flex flex-col items-center">
+                <label class="pb-1" for="order">order</label>
+                <select name="order" id="order" required class="mb-4 rounded-md">
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <!-- Choose number of results -->
+            <div class="flex flex-col items-center">
+                <label class="pb-1" for="number_results">results</label>
+                <select name="number_results" id="number_results" required class="mb-4 rounded-md">
+                    <option value="20" selected>20</option>
+                    <option value="50" selected>50</option>
+                    <option value="100" selected>100</option>
+                </select>
+            </div>
+            
+        </div>
+
+        <!-- Submit form -->
+        <button class="px-24 p-4 font-medium rounded-md font-ui text-2xl bg-violetb-dark hover:bg-violetb-medium focus:outline-none focus:ring focus:ring-3 focus:ring-gray-400 text-white tracking-wide max-w-md">
+            Generate Names
+        </button>
+    </form>
+
+
+    <!-- Names get generated here -->
+    <div id="results" class="transition flex flex-col pt-8 md:pt-10">
+    <ul class="m-auto text-center font-medium tracking-wide column-count-1 sm:column-count-3 lg:column-count-5">
+
+    </ul>
+    </div>
+</main>
+
+<!-- Function to Copy List -->
+<script>
+    function copy() {
+        let tagList = document.getElementsByTagName("li");
+        let nameList = [];
+        for (let i = 0; i < tagList.length; i++){
+            nameList.push(tagList[i].innerHTML)
+        };
+        let copyText = nameList.join('\n');
+        console.log(copyText);
+        navigator.clipboard.writeText(copyText);
+        alert("List copied.");
+};
+</script>
+{% endblock content %}
