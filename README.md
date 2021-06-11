@@ -1,4 +1,4 @@
-# Fantasy Name Generator: A CS50 Final Project
+# Fantasy Name Generator
 
 ![Screenshot](https://github.com/annasapsfordfrancis/fantasy-name-generator/blob/main/Screenshot.png)
 
