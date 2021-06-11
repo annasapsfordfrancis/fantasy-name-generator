@@ -1,5 +1,5 @@
 # Fantasy Name Generator: A CS50 Final Project
-#### Video Demo:  Coming soon!
+#### Video Demo:  https://www.youtube.com/watch?v=DWzya1LMX9w
 #### Web Demo: https://fantasy-name-generator.herokuapp.com
 #### Description:
 A web app that generates fantasy names based on real-world cultures using Markov chains.
