@@ -1,4 +1,7 @@
 # Fantasy Name Generator: A CS50 Final Project
+
+![Screenshot](https://github.com/annasapsfordfrancis/fantasy-name-generator/blob/main/Screenshot.png)
+
 #### Video Demo:  https://www.youtube.com/watch?v=DWzya1LMX9w
 #### Web Demo: https://fantasy-name-generator.herokuapp.com
 #### Description:
@@ -37,13 +40,13 @@ To run the app:
 
 `python app.py`
 
-To recompile tailwindcss run:
+To recompile Tailwind CSS run:
 
 `npx tailwindcss-cli@latest build ./static/src/main.css -c ./tailwind.config.js -o ./static/dist/main.css`
 
-To purge tailwindcss run:
+To purge Tailwind CSS run:
 
-`NODE_ENV=production npx tailwindcss-cli@latest build ./static/src/main.css -c ./tailwino ./static/dist/main.css`
+`NODE_ENV=production npx tailwindcss-cli@latest build ./static/src/main.css -c ./tailwind.config.js -o ./static/dist/main.css`
 
 
 ### Background
@@ -73,7 +76,7 @@ Mixing languages and cultures has unpredictable results. Although this might be 
 ### File Overview
 
 #### Libraries:
-I'm using Flask and Python to run things server-side and HTML and TailwindCss in the browser. Some of the browser-side scripting is pure JavaScript and some is HTMX. I'm using Flask-Assets to bundle script files.
+I'm using [Flask](https://palletsprojects.com/p/flask/) and Python to run things server-side and HTML and [Tailwind CSS](https://tailwindcss.com/docs) in the browser. Some of the browser-side scripting is pure JavaScript and some is [HTMX](https://htmx.org/docs/). I'm using [Flask-Assets](https://flask-assets.readthedocs.io/en/latest/) to bundle script files.
 
 #### static > data
 This contains the name lists that namemaker uses to generate the Markov chains. Lists are separated by culture and gender.
@@ -103,19 +106,19 @@ npm handles JavaScript dependencies in package.json
 
 pypoetry handles Python dependencies in pyproject.toml
 
-tailwind.config.js contains extra fonts, colours and plugins for tailwindcss
+tailwind.config.js contains extra fonts, colours and plugins for Tailwind CSS
 
 ### In Detail
 
 #### index.html
 Contains the main app html including the search form and the placeholder for the generated names. HTMX sends the POST request to Flask and injects the html it receives into the results div beneath the form. It also applies a CSS transition.
 
-TailwindCss handles the CSS and responsive layout.
+Tailwind CSS handles the CSS and responsive layout.
 
 #### app.py
 Contains the server-side logic including the code for name generation and the html to be injected into index.html to display the generated names.
 
-The server is Flask with Python for server-side scripting. Flask Assets bundles the CSS and JavaScript.
+The server is Flask with Python for server-side scripting. Flask-Assets bundles the CSS and JavaScript.
 
 There are two app routes. One to render the main page and the other to handle name generation.
 
